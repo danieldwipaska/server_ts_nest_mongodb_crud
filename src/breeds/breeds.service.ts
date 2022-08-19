@@ -11,7 +11,7 @@ export class BreedsService {
     @InjectModel(Breed.name) private breedModel: Model<BreedDocument>,
   ) {}
   create(createBreedDto: CreateBreedDto): Promise<Breed> {
-    const createdBreed = new this.breedModel(createBreedDto);
+    const createdBreed = new this.breedModel(createBreedDto); //createBreedDto is the req.body
     return createdBreed.save();
   }
 
